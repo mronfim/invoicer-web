@@ -7,6 +7,43 @@
         margin-bottom: 20px;
     }
 
+    .sub-header {
+        display: flex;
+        margin: 10px 0;
+        opacity: 0.5;
+        font-size: 10pt;
+
+        .category {
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+
+            &.number {
+                flex-grow: 1;
+                flex-basis: 80px;
+            }
+            &.title {
+                flex-grow: 3;
+                text-align: left;
+                flex-basis: 100px;
+            }
+            &.client {
+                flex-grow: 3;
+                text-align: left;
+            }
+            &.total {
+                flex-grow: 2;
+            }
+
+            &:first-of-type {
+                border-left: none;
+            }
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+    }
+
     .estimate-list {
         border: 1px solid #ddd;
         border-radius: 5px;

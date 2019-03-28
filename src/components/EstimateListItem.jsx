@@ -19,10 +19,18 @@ export default class EstimateListItem extends Component {
         const total = items.reduce((prev, item) => ({ price: prev.price + item.price })).price
         return (
             <div className='estimate-list-item'>
-                <div className='estimate-number'><h6>#{estimateNumber}</h6></div>
-                <div className='estimate-title'><h5>{title}</h5></div>
-                <div className='estimate-client'>{this.parseClientInfo(client)}</div>
-                <div className='estimate-total'><h4>${total}</h4></div>
+                <div className='estimate-number'>
+                    <span>#{estimateNumber}</span>
+                </div>
+                <div className='estimate-title'>
+                    <span>{title}</span>
+                </div>
+                <div className='estimate-client'>
+                    <span>{this.parseClientInfo(client)}</span>
+                </div>
+                <div className='estimate-total'>
+                    <span>${total}</span>
+                </div>
             </div>
         )
     }

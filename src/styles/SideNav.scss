@@ -1,0 +1,39 @@
+.sidenav {
+    width: 100%;
+    max-width: 300px;
+    background: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    .brand {
+        height: 54px;
+        padding: 0.5rem 1rem;
+        background: var(--blue);
+
+        .navbar-brand {
+            color: white;
+            margin: 0;
+        }
+    }
+
+    .link {
+        padding: 15px 0;
+        transition: all .2s ease-in-out;
+        transition-property: background-color, boder, font-weight;
+        border-top-color: none;
+        border-bottom-color: none;
+        
+        &:hover {
+            background-color: #fcfcfc;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 14px 0;
+            text-decoration: none;
+            color: rgb(100, 100, 100);
+            font-weight: bold;
+        }
+    }
+}

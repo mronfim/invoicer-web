@@ -23,14 +23,20 @@ class Estimates extends Component {
             <EstimateListItem estimate={estimate} key={estimate.id} />
         ))
         return (
-            <div className="estimates">
-                <div className="header">
+            <div className='estimates'>
+                <div className='header'>
                     <h2>Estimates</h2>
                     <Button>
                         New Estimate
                     </Button>
                 </div>
                 <div className="estimate-list">
+                    <div className='sub-header'>
+                        <div className='category number'><span>number</span></div>
+                        <div className='category title'><span>title</span></div>
+                        <div className='category client'><span>client</span></div>
+                        <div className='category total'><span>total</span></div>
+                    </div>
                     {estimates}
                 </div>
             </div>

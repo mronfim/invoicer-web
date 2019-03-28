@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, Route, Redirect } from 'react-router-dom'
 import {
     Container,
     Row,
@@ -24,8 +25,8 @@ class Dashboard extends React.Component {
                 <Container className='dashboard' fluid={true}>
                     <Row className='dashboard-body' noGutters={true}>
                         <Col className='app-root'>
-                            {/* <Companies /> */}
-                            <Estimates />
+                            <Route path='/companies' component={Companies} />
+                            <Route path='/estimates' component={Estimates} />
                         </Col>
                     </Row>
                 </Container>
