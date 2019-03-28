@@ -70,7 +70,7 @@ export default class CompanyInstanceCard extends Component {
         const { editPaneStyle } = this.state
 
         return (
-            <div key={id} className='company-instance-card'>
+            <div className='company-instance-card'>
                 <ul>
                     <li>
                         <Form.Check type="checkbox" />

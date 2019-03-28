@@ -5,9 +5,6 @@ import 'styles/EstimateListItem.scss'
 export default class EstimateListItem extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            ...this.props.estimate
-        }
     }
 
     parseClientInfo(client) {
@@ -15,10 +12,11 @@ export default class EstimateListItem extends Component {
     }
 
     render() {
-        const { id, title, client, estimateNumber, items } = this.state
+        const { estimate } = this.props;
+        const { id, title, client, estimateNumber, items } = estimate
         const total = items.reduce((prev, item) => ({ price: prev.price + item.price })).price
         return (
-            <div className='estimate-list-item'>
+            <div className='estimate-list-item' onClick={() => this.props.onClick(estimate)}>
                 <div className='estimate-number'>
                     <span>#{estimateNumber}</span>
                 </div>

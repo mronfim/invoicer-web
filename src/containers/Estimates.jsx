@@ -6,6 +6,7 @@ import {
 } from 'react-bootstrap'
 
 import { fetchEstimates } from 'actions/companyActions'
+import { unsetEstimateDetails } from 'actions/companyActions'
 
 import EstimateListItem from 'components/EstimateListItem'
 
@@ -15,19 +16,31 @@ class Estimates extends Component {
     componentWillMount() {
         const userId = this.props.user.id
         const companyId = this.props.company.id
-        this.props.fetchEstimates(userId, companyId);
+        this.props.fetchEstimates(userId, companyId)
+    }
+
+    onClickEstimate(estimate) {
+        this.props.unsetEstimateDetails()
+        this.props.history.push({
+            pathname: `/estimate/${estimate.id}`,
+            state: { estimate },
+        })
     }
 
     render() {
         const estimates = this.props.estimates.map(estimate => (
-            <EstimateListItem estimate={estimate} key={estimate.id} />
+            <EstimateListItem
+                key={estimate.id}
+                estimate={estimate}
+                onClick={this.onClickEstimate.bind(this)}
+            />
         ))
         return (
             <div className='estimates'>
                 <div className='header'>
                     <h2>Estimates</h2>
                     <Button>
-                        New Estimate
+                        New Estimates
                     </Button>
                 </div>
                 <div className="estimate-list">
@@ -52,6 +65,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
     fetchEstimates,
+    unsetEstimateDetails,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps )(Estimates)

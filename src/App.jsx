@@ -4,6 +4,8 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import store from 'store'
 
+import Topbar from 'components/Topbar'
+import SideNav from 'components/SideNav'
 import Dashboard from 'pages/Dashboard'
 
 import 'styles/App.css';
@@ -24,6 +26,8 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
+            <Topbar />
+            <SideNav />
             <Dashboard />
           </div>
         </BrowserRouter>

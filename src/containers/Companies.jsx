@@ -18,7 +18,7 @@ class Companies extends Component {
 
     render() {
         const companies = this.props.companies.map(company => (
-            <CompanyInstanceCard company={company} />
+            <CompanyInstanceCard company={company} key={company.id} />
         ))
         return (
             <div className="companies">
