@@ -30,7 +30,9 @@ class Companies extends Component {
 }
 
 const mapStateToProps = state => ({
-    companies: state.user.companies
+    user: state.user.currentUser,
+    company: state.company.currentCompany,
+    companies: state.user.companies,
 })
 
 const mapDispatchToProps = {

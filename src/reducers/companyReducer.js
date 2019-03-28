@@ -1,18 +1,18 @@
-import { FETCH_USER_COMPANIES, NEW_USER_COMPANY } from 'actions/types'
+import { FETCH_COMPANY_ESTIMATES, NEW_COMPANY_ESTIMATE } from 'actions/types'
 
 const initialState = {
     current: {
         id: 1,
     },
-    companies: [],
+    estimates: [],
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_USER_COMPANIES:
+        case FETCH_COMPANY_ESTIMATES:
             return {
                 ...state,
-                companies: action.payload
+                estimates: action.payload
             }
         default:
             return state

@@ -9,6 +9,7 @@ import {
 
 import Topbar from 'components/Topbar'
 import Companies from 'containers/Companies'
+import Estimates from 'containers/Estimates'
 
 import 'styles/Dashboard.css'
 
@@ -23,7 +24,8 @@ class Dashboard extends React.Component {
                 <Container className='dashboard' fluid={true}>
                     <Row className='dashboard-body' noGutters={true}>
                         <Col className='app-root'>
-                            <Companies />
+                            {/* <Companies /> */}
+                            <Estimates />
                         </Col>
                     </Row>
                 </Container>
