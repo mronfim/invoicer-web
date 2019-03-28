@@ -1,0 +1,24 @@
+.dashboard {
+    padding: 0;
+    height: 100%;
+}
+
+.app-root {
+    padding: 15px !important;
+}
+
+.app-root::before {
+    content: '';
+    border-left: 1px solid #ddd;
+    display: block;
+    position: fixed;
+    top: 55px;
+    bottom: 0;
+    right: 0;
+    left: 300px;
+    pointer-events: none;
+
+    -webkit-box-shadow: inset 10px 10px 20px -8px rgba(0,0,0,0.06);
+    -moz-box-shadow: inset 10px 10px 20px -8px rgba(0,0,0,0.06);
+    box-shadow: inset 10px 10px 20px -8px rgba(0,0,0,0.06);
+}

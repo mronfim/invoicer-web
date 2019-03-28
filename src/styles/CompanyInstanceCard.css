@@ -1,0 +1,59 @@
+.company-instance-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    padding: 15px;
+    margin-top: 1rem;
+
+    -webkit-box-shadow: 0 8px 10px -8px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 8px 10px -8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 10px -8px rgba(0,0,0,0.1);
+}
+
+.company-instance-card .name {
+    margin: 0;
+}
+
+.company-instance-card .edit-pane {
+    position: relative;
+    height: auto;
+    transition: all 0.1s ease;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.company-instance-card .edit-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.company-instance-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+
+.company-instance-card ul li:nth-child(1),
+.company-instance-card ul li:nth-child(2) {
+    margin-top: 7px;
+}
+
+.company-instance-card ul li:nth-child(2) {
+    flex: 3;
+}
+
+.company-instance-card ul .form-check {
+    padding-left: .5rem;
+    padding-right: 1.25rem;
+}
+
+.company-instance-card ul .form-check-input {
+    margin: 0;
+}

@@ -1,0 +1,21 @@
+.sidenav {
+    width: 100%;
+    max-width: 300px;
+    background: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.sidenav .brand {
+    height: 54px;
+    padding: 0.5rem 1rem;
+    background: var(--blue);
+}
+
+.sidenav .brand .navbar-brand {
+    color: white;
+    margin: 0;
+}

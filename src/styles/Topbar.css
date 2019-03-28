@@ -1,0 +1,28 @@
+.topbar {
+    left: 300px;
+    border-bottom: 1px solid #ddd;
+    background-color: white !important;
+}
+
+.topbar .row{
+    width: 100%;
+}
+
+.topbar-left,
+.topbar-right {
+    padding: .5rem 1rem !important;
+}
+
+.topbar-left {
+    max-width: 300px;
+    background: var(--blue);
+    text-align: left;
+}
+
+.topbar-left .navbar-brand {
+    color: white;
+}
+
+.topbar-right {
+    background: white;
+}
