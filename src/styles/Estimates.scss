@@ -1,3 +1,15 @@
-.estimate-list-item {
-    background-color: white;
+.estimates {
+    
+    .header {
+        display: flex;
+        text-align: left;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .estimate-list {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: white;
+    }
 }

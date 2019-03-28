@@ -1,0 +1,23 @@
+.estimate-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    div {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+    }
+}
+

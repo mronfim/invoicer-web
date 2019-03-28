@@ -14,10 +14,8 @@ class Topbar extends Component {
     return (
         <Navbar className="topbar" bg="light" variant="light" fixed="top">
             <Navbar.Collapse className='justify-content-end'>
-                <Button
-                    variant="primary"
-                    onClick={event => this.props.simpleAction()}>
-                    Try Redux
+                <Button variant="outline-primary">
+                    Sign Out
                 </Button>
             </Navbar.Collapse>
         </Navbar>

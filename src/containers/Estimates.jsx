@@ -24,8 +24,15 @@ class Estimates extends Component {
         ))
         return (
             <div className="estimates">
-                <h2>Estimates</h2>
-                {estimates}
+                <div className="header">
+                    <h2>Estimates</h2>
+                    <Button>
+                        New Estimate
+                    </Button>
+                </div>
+                <div className="estimate-list">
+                    {estimates}
+                </div>
             </div>
         )
     }
