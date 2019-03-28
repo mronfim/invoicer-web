@@ -20,6 +20,7 @@
     transition: all 0.1s ease;
     overflow-y: hidden;
     overflow-x: auto;
+    border-top: 1px solid #efefef;
 }
 
 .company-instance-card .edit-form {

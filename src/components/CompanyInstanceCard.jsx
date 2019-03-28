@@ -20,6 +20,7 @@ export default class CompanyInstanceCard extends Component {
         }
     }
 
+    // Handles style changes when entering editing mode
     _startEditing() {
         this.setState({
             editing: true,
@@ -27,6 +28,7 @@ export default class CompanyInstanceCard extends Component {
         })
     }
 
+    // Handles style changes when leaving editing mode
     _cancelEditing() {
         this.setState({
             editing: false,
@@ -34,12 +36,33 @@ export default class CompanyInstanceCard extends Component {
         })
     }
 
+    // Called when edit button is pressed
     onEdit() {
         this.state.editing ? this._cancelEditing() : this._startEditing()
     }
 
+    // Handle text input onChange event
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
+    }
+
+    // Editing was canceled. Revert the values back to default
+    onCancel() {
+        this._cancelEditing()
+        this.setState({
+            name: this.props.company.name,
+            ...this.props.company.address,
+        })
+    }
+
+    // Delete Company. API request
+    onDelete() {
+
+    }
+
+    // Save edits. API Request
+    onSave() {
+        this._cancelEditing()
     }
 
     render() {
@@ -53,10 +76,12 @@ export default class CompanyInstanceCard extends Component {
                         <Form.Check type="checkbox" />
                     </li>
                     <li><h5 className='name'>{name}</h5></li>
-                    <li>
-                        <Button variant="outline-secondary" onClick={this.onEdit.bind(this)}>
-                            Edit
-                        </Button>
+                    <li className='edit-cancel-group'>
+                        <div>
+                            <Button variant="outline-secondary" onClick={this.onEdit.bind(this)}>
+                                Edit
+                            </Button>
+                        </div>
                     </li>
                 </ul>
                 <div className='edit-pane' style={editPaneStyle}>
@@ -113,11 +138,14 @@ export default class CompanyInstanceCard extends Component {
                         </Form.Group>
                         <ButtonToolbar>
                             <ButtonGroup style={{ margin: '0 0 0 auto' }}>
-                                <Button variant="outline-danger" type="Save">
+                                <Button variant="outline-danger" onClick={this.onDelete.bind(this)}>
                                     Delete
                                 </Button>
-                                <Button variant="success" type="Save">
-                                    Submit
+                                <Button variant="outline-secondary" onClick={this.onCancel.bind(this)}>
+                                    Cancel
+                                </Button>
+                                <Button variant="success" onClick={this.onSave.bind(this)}>
+                                    Save
                                 </Button>
                             </ButtonGroup>
                         </ButtonToolbar>
