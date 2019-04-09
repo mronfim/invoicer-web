@@ -12,13 +12,30 @@ import CompanyInstanceCard from 'components/CompanyInstanceCard'
 import 'styles/Companies.css'
 
 class Companies extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            expandedCompanyId: undefined,
+        }
+    }
+
     componentWillMount() {
-        this.props.fetchCompanies();
+        this.props.fetchCompanies()
+    }
+
+    onExpandForEditing(companyId) {
+        this.setState({ expandedCompanyId: companyId })
     }
 
     render() {
+        const expanded = this.state.expandedCompanyId // Which company should be expanded for editing
         const companies = this.props.companies.map(company => (
-            <CompanyInstanceCard company={company} key={company.id} />
+            <CompanyInstanceCard
+                key={company.id}
+                company={company}
+                expanded={company.id === expanded}
+                onEdit={this.onExpandForEditing.bind(this)}
+            />
         ))
         return (
             <div className="companies">

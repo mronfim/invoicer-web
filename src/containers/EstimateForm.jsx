@@ -45,6 +45,7 @@ class EstimateForm extends Component {
 
     render() {
         const { minHeight } = this.state
+        const estimate = this.props.estimate || {}
         const items = this.props.estimate && this.props.estimate.items.map((item, index) => (
             <div key={index} className='estime-item'>
                 {item.description} {item.price}
@@ -52,8 +53,26 @@ class EstimateForm extends Component {
         ))
         return (
             <Container fluid={true} className='estimate-form' style={{ minHeight }}>
-                <h1>Estimate</h1>
-                {items}
+                <header className="estimate-header">
+                    <div className="estimate-number text-left">
+                        <h3>Estimate #{estimate.estimateNumber}</h3>
+                    </div>
+                    <hr />
+                    <div className="header-info">
+                        <div className="client-info text-left">
+                            <div className="client-info-header">
+                                <h5>Client</h5>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <hr/>
+                <div className="estimate-items">
+                    <div className="items-header">
+                        <h5>Items</h5>
+                    </div>
+                    {items}
+                </div>
             </Container>
         )
     }

@@ -13,8 +13,7 @@ export default class EstimateListItem extends Component {
 
     render() {
         const { estimate } = this.props;
-        const { id, title, client, estimateNumber, items } = estimate
-        const total = items.reduce((prev, item) => ({ price: prev.price + item.price })).price
+        const { id, title, client, estimateNumber, items, total } = estimate
         return (
             <div className='estimate-list-item' onClick={() => this.props.onClick(estimate)}>
                 <div className='estimate-number'>

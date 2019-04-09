@@ -1,13 +1,22 @@
 .company-instance-card {
     border: 1px solid #ddd;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     background: white;
     padding: 15px;
-    margin-top: 1rem;
+    border-width: 0px 0px 1px 0px;
+    transition: all 0.1s ease;
 
-    -webkit-box-shadow: 0 8px 10px -8px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0 8px 10px -8px rgba(0,0,0,0.1);
-    box-shadow: 0 8px 10px -8px rgba(0,0,0,0.1);
+    &.expanded {
+        border-width: 1px;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        border-radius: 5px;
+    }
+
+    &:first-of-type {
+        margin-top: 1rem;
+        border-top-width: 1px;
+    }
 }
 
 .company-instance-card .name {

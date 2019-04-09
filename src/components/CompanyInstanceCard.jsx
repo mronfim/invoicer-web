@@ -7,7 +7,7 @@ import {
     ButtonGroup,
 } from 'react-bootstrap'
 
-import 'styles/CompanyInstanceCard.css'
+import 'styles/CompanyInstanceCard.scss'
 
 export default class CompanyInstanceCard extends Component {
     constructor(props) {
@@ -15,30 +15,22 @@ export default class CompanyInstanceCard extends Component {
         this.state = {
             name: props.company.name,
             ...props.company.address,
-            editing: false,
-            editPaneStyle: styleNotEditing
         }
     }
 
     // Handles style changes when entering editing mode
     _startEditing() {
-        this.setState({
-            editing: true,
-            editPaneStyle: styleEditing,
-        })
+        this.props.onEdit(this.props.company.id)
     }
 
     // Handles style changes when leaving editing mode
     _cancelEditing() {
-        this.setState({
-            editing: false,
-            editPaneStyle: styleNotEditing,
-        })
+        this.props.onEdit(undefined)
     }
 
     // Called when edit button is pressed
     onEdit() {
-        this.state.editing ? this._cancelEditing() : this._startEditing()
+        this.props.expanded ? this._cancelEditing() : this._startEditing()
     }
 
     // Handle text input onChange event
@@ -67,10 +59,12 @@ export default class CompanyInstanceCard extends Component {
 
     render() {
         const { id, name, street, city, state, zipcode } = this.state
-        const { editPaneStyle } = this.state
+        const { expanded } = this.props
+        const editPaneStyle = expanded ? styleEditing : styleNotEditing
+        const expandedClass = expanded ? 'expanded' : ''
 
         return (
-            <div className='company-instance-card'>
+            <div className={`company-instance-card ${expandedClass}`}>
                 <ul>
                     <li>
                         <Form.Check type="checkbox" />

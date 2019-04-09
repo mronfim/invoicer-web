@@ -11,7 +11,7 @@ export const fetchEstimates = (userId, companyId) => dispatch => {
         .then(response => {
             dispatch({
                 type: FETCH_COMPANY_ESTIMATES,
-                payload: response.data
+                payload: response.data.estimates
             })
         })
 }
